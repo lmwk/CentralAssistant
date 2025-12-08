@@ -3,32 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:draw="clr-namespace:System.Drawing;assembly=System.Drawing"
         xmlns:local="clr-namespace:CentralAssistant"
         mc:Ignorable="d"
         Title="Central Assistant" Height="450" Width="800" Background="#001C1F3B" ScrollViewer.HorizontalScrollBarVisibility="Auto" UseLayoutRounding="True" WindowStyle="None">
-    <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Padding="6" Background="GhostWhite">
+    <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Padding="6" Background="#FF1C1F3B">
         <Grid UseLayoutRounding="True">
-            <TabControl Background="#FF1C1F3B" UseLayoutRounding="True">
-                <TabItem Header="Home" UseLayoutRounding="True">
-                    <TabItem.Background>
-                        <LinearGradientBrush EndPoint="0,1">
-                            <GradientStop Color="#FFF0F0F0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TabItem.Background>
+            <TabControl Background="#FF1C1F3B" UseLayoutRounding="True" BorderBrush="#00ACACAC" Foreground="#FF1C1F3B">
+                <TabItem Header="Home" UseLayoutRounding="True" Background="#FF1C1F3B" BorderBrush="#FF777777" Foreground="White" IsSelected="True">
                     <Grid Background="#FF282C4D"/>
                 </TabItem>
-                <TabItem Header="Audio" UseLayoutRounding="True">
+                <TabItem Header="Audio" UseLayoutRounding="True" Background="#FF1C1F3B" BorderBrush="#FF777777" Foreground="White">
                     <Grid Background="#FF282C4D"/>
                 </TabItem>
-                <TabItem Header="Games" UseLayoutRounding="True">
+                <TabItem Header="Games" UseLayoutRounding="True" Background="#FF1C1F3B" BorderBrush="#FF777777" Foreground="White">
                     <Grid Background="#FF282C4D"/>
                 </TabItem>
             </TabControl>
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
-                <Button Content="—" Width="20" Height="20" Background="Gray" Foreground="White" FontWeight="Bold" Click="MinimizeButton_Click"/>
-                <Button Content="▢" Width="20" Height="20" Background="Gray" Foreground="White" FontWeight="Bold" Click="MaximizeRestoreButton_Click" Margin="10,0,0,0"/>
-                <Button Content="X" Width="20" Height="20" Background="Red" Foreground="White" FontWeight="Bold" Click="CloseButton_Click" Margin="10,0,0,0"/>
+                <Button x:Name="MinimizeButton" Content="—" Width="40" Height="20" Foreground="White" FontWeight="Bold" Click="MinimizeButton_Click" Background="#FF1C1F3B" BorderBrush="#FF1C1F3B" FontFamily="Segoe UI Variable Display Light"/>
+                <Button x:Name="MaximizeRestoreButton" Content="▢" Width="40" Height="20" Background="#FF1C1F3B" Foreground="White" FontWeight="Bold" Click="MaximizeRestoreButton_Click" BorderBrush="#FF1C1F3B" FontFamily="Segoe UI Variable Display Light"/>
+                <Button x:Name="CloseButton" Content="X" Width="40" Height="20" Background="#FF1C1F3B" Foreground="White" FontWeight="Bold" Click="CloseButton_Click" BorderBrush="#FF1C1F3B" FontFamily="Segoe UI Variable Display Light"/>
             </StackPanel>
 
         </Grid>
