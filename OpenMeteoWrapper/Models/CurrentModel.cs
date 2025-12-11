@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace OpenMeteoWrapper.Models
 {
@@ -24,6 +25,8 @@ namespace OpenMeteoWrapper.Models
         /// WMO Weather interpretation code.
         /// To get an actual string representation use <see cref="OpenMeteo.OpenMeteoClient.WeathercodeToString(int)"/>
         /// </summary>
+        /// 
+        [JsonConverter(typeof(WeathercodeConverter))]
         public int? Weathercode { get; set; }
 
         /// <summary>
